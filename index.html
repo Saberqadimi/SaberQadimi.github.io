@@ -312,20 +312,80 @@
                 margin-top: 1.5rem;
             }
         }
+
+        /* Language switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 10px;
+        }
+
+        .language-switcher button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .language-switcher button.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .language-switcher button:hover {
+            background-color: var(--light-gray);
+        }
+
+        /* RTL support for Persian */
+        body[dir="rtl"] {
+            direction: rtl;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body[dir="rtl"] ul {
+            padding-right: 1.5rem;
+            padding-left: 0;
+        }
+
+        body[dir="rtl"] li:before {
+            margin-right: -1em;
+            margin-left: 0;
+        }
+
+        .persian-content {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
+    <div class="language-switcher">
+        <button class="active" onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('fa')">فارسی</button>
+    </div>
+
     <div class="container">
         <div class="header">
             <div class="title">
-                <h1>Saber Qadimi</h1>
-                <h3>Back-end Developer | Laravel Expert</h3>
+                <h1 class="english-content">Saber Qadimi</h1>
+                <h1 class="persian-content">صابر قدیمی</h1>
+                <h3 class="english-content">Back-end Developer | Laravel Expert</h3>
+                <h3 class="persian-content">توسعه دهنده بک اند | متخصص لاراول</h3>
             </div>
             <div class="contact">
                 <div class="contact-item">
                     <span class="contact-icon">📱</span>
-                    <span>+98 903-232-2968</span>
+                    <span  style="direction: ltr;" >+98 903-232-2968</span>
                 </div>
                 <div class="contact-item">
                     <span class="contact-icon">📧</span>
@@ -333,147 +393,304 @@
                 </div>
                 <div class="contact-item">
                     <span class="contact-icon">🔗</span>
-                    <a href="https://www.linkedin.com/in/saber-qadimi" target="_blank">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/saber-qadimi" target="_blank"
+                        class="english-content">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/saber-qadimi" target="_blank"
+                        class="persian-content">لینکدین</a>
                 </div>
                 <div class="contact-item">
                     <span class="contact-icon">💻</span>
-                    <a href="https://github.com/SaberQadimi" target="_blank">GitHub</a>
+                    <a href="https://github.com/SaberQadimi" target="_blank" class="english-content">GitHub</a>
+                    <a href="https://github.com/SaberQadimi" target="_blank" class="persian-content">گیتهاب</a>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2 class="english-content">About Me</h2>
+            <h2 class="persian-content">درباره من</h2>
+
+            <p class="english-content">
+                Full-Stack PHP Developer with over 4 years of experience in designing and developing robust, scalable
+                web applications. While mastering core technologies like PHP, Laravel, and JavaScript, I’ve also focused
+                on deepening my understanding of essential software engineering concepts—such as deployment workflows,
+                server configuration, and containerization using Docker. I’ve actively explored design patterns and
+                architectural principles to build maintainable systems and have studied scalability strategies including
+                load balancing and horizontal scaling. My work is shaped by a continuous learning mindset, hands-on
+                experimentation, and a strong commitment to writing clean, extensible code. I thrive in collaborative,
+                agile environments and am always eager to tackle technical challenges that require both depth and
+                creativity.
+            </p>
+
+            <p class="persian-content">
+                توسعه‌دهنده فول‌استک PHP با بیش از ۴ سال تجربه در طراحی و توسعه اپلیکیشن‌های وب قدرتمند و مقیاس‌پذیر. در
+                کنار تسلط بر فناوری‌های اصلی مانند PHP، Laravel و JavaScript، تمرکز ویژه‌ای بر درک عمیق مفاهیم مهندسی
+                نرم‌افزار داشته‌ام؛ از جمله فرایندهای استقرار برنامه روی سرور، پیکربندی سرورها و استفاده از ابزارهایی
+                مانند Docker برای کانتینرسازی. همچنین مفاهیم معماری نرم‌افزار و الگوهای طراحی را به‌صورت عملی مطالعه و
+                در پروژه‌ها پیاده‌سازی کرده‌ام. در مسیر توسعه سامانه‌های مقیاس‌پذیر، با مفاهیمی مانند لودبالانسر (Load
+                Balancing) و مقیاس‌پذیری افقی آشنا شده‌ام و آن‌ها را در طراحی‌ها مدنظر قرار داده‌ام. رویکرد من مبتنی بر
+                یادگیری مداوم، آزمون و خطا، و تعهد به تولید کدی تمیز، قابل نگهداری و توسعه‌پذیر است. همکاری تیمی،
+                متدولوژی‌های چابک و مواجهه با چالش‌های فنی پیچیده از جمله بخش‌های مورد علاقه‌ من در مسیر توسعه هستند.
+            </p>
+        </div>
+
+
+        <div class="section">
+            <h2 class="english-content">Work Experience</h2>
+            <h2 class="persian-content">سوابق شغلی</h2>
+
+            <div class="job">
+                <h3 class="english-content">Full-Stack Developer | Cyclical Waves</h3>
+                <h3 class="persian-content">توسعه‌دهنده فول استک | Cyclical Waves</h3>
+                <div class="job-date">Jan 2023 – Present</div>
+                <ul>
+                    <li class="english-content">Enhanced complex financial applications by restructuring technical
+                        infrastructure and developing modular components.</li>
+                    <li class="persian-content">بهبود برنامه‌های مالی پیچیده با بازسازی زیرساخت فنی و توسعه کامپوننت‌های
+                        ماژولار.</li>
+                    <li class="english-content">Optimized systems using Redis caching, improving performance by over
+                        30%.</li>
+                    <li class="persian-content">بهینه‌سازی سیستم‌ها با استفاده از کش Redis، بهبود عملکرد بیش از 30%.
+                    </li>
+                    <li class="english-content">Implemented centralized AuthServer, improving login efficiency and
+                        reducing support costs.</li>
+                    <li class="persian-content">پیاده‌سازی AuthServer متمرکز، بهبود کارایی ورود به سیستم و کاهش
+                        هزینه‌های پشتیبانی.</li>
+                    <li class="english-content">Packaged shared modules to boost reusability and speed up dev cycles.
+                    </li>
+                    <li class="persian-content">پکیج نویسی ماژول‌های مشترک برای افزایش قابلیت استفاده مجدد و تسریع
+                        چرخه‌های توسعه.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3 class="english-content">Backend Developer | Golden Swan Team</h3>
+                <h3 class="persian-content">توسعه‌دهنده بک‌اند | تیم قوطلایی</h3>
+                <div class="job-date">Dec 2023 – Jun 2024</div>
+                <ul>
+                    <li class="english-content">Built a scalable Laravel backend for a gold e-commerce website.</li>
+                    <li class="persian-content">ساخت بک‌اند لاراول مقیاس‌پذیر برای یک وبسایت تجارت الکترونیک طلا.</li>
+                    <li class="english-content">Integrated advanced inventory and accounting systems.</li>
+                    <li class="persian-content">ادغام سیستم‌های پیشرفته انبارداری و حسابداری.</li>
+                    <li class="english-content">Customized dashboards for producers and marketers.</li>
+                    <li class="persian-content">سفارشی‌سازی داشبوردها برای تولیدکنندگان و بازاریابان.</li>
+                    <li class="english-content">Integrated multiple payment gateways including SnapPay installments -
+                        Fadax - ZarinPlus - ZarinPal.
+                    </li>
+                    <li class="persian-content">ادغام چندین درگاه پرداخت از جمله اقساط
+                        SnapPay
+                        و
+                        Fadax - ZarinPlus - ZarinPal
+                    </li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3 class="english-content">Full Stack Developer | Hoshmand Afzar Michael</h3>
+                <h3 class="persian-content">توسعه‌دهنده فول‌استک | هوشمند افزار مایکل</h3>
+                <div class="job-date">Jul 2022 – Nov 2022</div>
+                <ul>
+                    <li class="english-content">Developed a VoIP platform with PayPal payment integration.</li>
+                    <li class="persian-content">توسعه پلتفرم VoIP با قابلیت پرداخت از طریق PayPal.</li>
+                    <li class="english-content">Created a web interface for managing and selling VoIP numbers with
+                        dynamic pricing and real-time credit tracking based on VoIP database updates.</li>
+                    <li class="persian-content">طراحی و پیاده‌سازی رابط وب برای مدیریت و فروش شماره‌های VoIP با
+                        قیمت‌گذاری پویا و نمایش بلادرنگ اعتبار باقی‌مانده، بر اساس داده‌های دریافتی از پایگاه داده VoIP.
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="job">
+                <h3 class="english-content">Full Stack Developer | Academy Gigasar</h3>
+                <h3 class="persian-content">توسعه‌دهنده فول‌استک | آکادمی لاغری گیگاسر</h3>
+                <div class="job-date">Nov 2021 – Apr 2022</div>
+                <ul>
+                    <li class="english-content">
+                        Developed a health-oriented e-commerce and service platform for personalized weight loss
+                        programs, combining wellness tracking, consulting, and course sales.
+                    </li>
+                    <li class="persian-content">
+                        توسعه پلتفرم فروشگاهی و خدماتی سلامت‌محور برای ارائه برنامه‌های شخصی‌سازی‌شده کاهش وزن، با
+                        امکانات پیگیری سلامتی، مشاوره تخصصی و فروش دوره‌های آموزشی.
+                    </li>
+                    <li class="english-content">
+                        Implemented dynamic dashboards to visualize initial weight, target goals, purchased plans, and
+                        real-time user progress.
+                    </li>
+                    <li class="persian-content">
+                        پیاده‌سازی داشبوردهای پویا برای نمایش وزن اولیه، اهداف کاربر، برنامه‌های خریداری‌شده و روند
+                        پیشرفت به‌صورت بلادرنگ.
+                    </li>
+                    <li class="english-content">
+                        Integrated interactive assessments including personality tests (e.g., MBTI) to personalize user
+                        experience and recommendations.
+                    </li>
+                    <li class="persian-content">
+                        افزودن ارزیابی‌های تعاملی مانند تست‌های شخصیتی (مانند MBTI) برای شخصی‌سازی تجربه کاربری و
+                        پیشنهادهای متناسب.
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="job">
+                <h3 class="english-content">Founder & Full Stack Developer | Advancelearn</h3>
+                <h3 class="persian-content">بنیان‌گذار و توسعه‌دهنده فول‌استک | ادونس لرن</h3>
+                <div class="job-date">Apr 2022 – 2024</div>
+                <ul>
+                    <li class="english-content">
+                        Launched and built Advancelearn.ir, an educational platform focused on programming and software
+                        development content.
+                    </li>
+                    <li class="persian-content">
+                        راه‌اندازی و توسعه پلتفرم آموزشی Advancelearn.ir با تمرکز بر آموزش برنامه‌نویسی و مفاهیم توسعه
+                        نرم‌افزار.
+                    </li>
+                    <li class="english-content">
+                        Developed key features including group chat, real-time ticketing system, article publishing, Q&A
+                        sections, and user rating functionality.
+                    </li>
+                    <li class="persian-content">
+                        پیاده‌سازی قابلیت‌هایی نظیر چت گروهی، سیستم تیکتینگ بلادرنگ، انتشار مقاله، بخش پرسش و پاسخ و
+                        امکان امتیازدهی کاربران.
+                    </li>
+                    <li class="english-content">
+                        Integrated SMS services and applied the repository pattern for scalable backend architecture.
+                    </li>
+                    <li class="persian-content">
+                        ادغام خدمات پیامکی و پیاده‌سازی معماری مقیاس‌پذیر با استفاده از الگوی مخزن (Repository Pattern).
+                    </li>
+                    <li class="english-content">
+                        Project temporarily paused to focus on deepening backend expertise; planning to resume with a
+                        more service-oriented and scalable vision.
+                    </li>
+                    <li class="persian-content">
+                        ادامه پروژه به‌صورت موقت متوقف شد تا تمرکز بیشتری بر یادگیری عمیق‌تر مباحث بک‌اند داشته باشم؛
+                        قصد دارم در آینده با رویکردی خدمات‌محور و مقیاس‌پذیرتر آن را ادامه دهم.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="section">
+            <h2 class="english-content">Technical Skills</h2>
+            <h2 class="persian-content">مهارت‌های فنی</h2>
+
+            <div class="skills-container">
+                <!-- Core Expertise (Expert) -->
+                <div class="badge expert">PHP</div>
+                <div class="badge expert">Laravel</div>
+                <div class="badge expert">MySQL</div>
+                <div class="badge expert">REST APIs</div>
+                <div class="badge expert">OOP</div>
+
+                <!-- Advanced Skills -->
+                <div class="badge advanced">Redis</div>
+                <div class="badge advanced">Design Patterns</div>
+                <div class="badge advanced">SOLID</div>
+                <div class="badge advanced">Git</div>
+                <div class="badge advanced">TDD</div>
+
+                <!-- Intermediate Skills -->
+                <div class="badge intermediate">MongoDB</div>
+                <div class="badge intermediate">ElasticSearch</div>
+                <div class="badge intermediate">Livewire</div>
+                <div class="badge intermediate">Docker</div>
+
+                <!-- Basic Skills -->
+                <div class="badge beginner">Inertia.js</div>
+                <div class="badge beginner">Node.js</div>
+                <div class="badge beginner">Express.js</div>
+                <div class="badge beginner">Nest.js</div>
+            </div>
+
+            <div class="skill-legend">
+                <div class="legend-item">
+                    <span class="legend-color expert"></span>
+                    <span class="english-content">Expert</span>
+                    <span class="persian-content">متخصص</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color advanced"></span>
+                    <span class="english-content">Advanced</span>
+                    <span class="persian-content">پیشرفته</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color intermediate"></span>
+                    <span class="english-content">Intermediate</span>
+                    <span class="persian-content">متوسط</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color beginner"></span>
+                    <span class="english-content">Beginner</span>
+                    <span class="persian-content">مبتدی</span>
                 </div>
             </div>
         </div>
 
         <div class="section">
-            <h2>Professional Summary</h2>
-            <p>
-                Accomplished Full-Stack PHP Developer with 4+ years of expertise in designing and implementing robust
-                web applications using PHP and JavaScript. Highly proficient in Laravel, with a proven track record in
-                creating scalable, secure, and maintainable solutions. Adept at collaborative team environments, agile
-                methodologies, and eager to tackle challenging problems to drive innovative development.
-            </p>
+            <h2 class="english-content">Education</h2>
+            <h2 class="persian-content">تحصیلات</h2>
+            <p class="english-content"><strong>Associate Degree in Architecture</strong> – Alghadir Technical University
+                of Zanjan, 2013</p>
+            <p class="persian-content"><strong>کاردانی معماری</strong> – دانشگاه فنی الغدیر زنجان، 1392</p>
         </div>
 
         <div class="section">
-            <h2>Work Experience</h2>
-
-            <div class="job">
-                <h3>Full-Stack Developer | Cyclical Waves</h3>
-                <div class="job-date">Jan 2023 – Present</div>
-                <ul>
-                    <li>Enhanced complex financial applications by restructuring technical infrastructure and developing
-                        modular components.</li>
-                    <li>Optimized systems using Redis caching, improving performance by over 30%.</li>
-                    <li>Implemented centralized AuthServer, improving login efficiency and reducing support costs.</li>
-                    <li>Packaged shared modules to boost reusability and speed up dev cycles.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Backend Developer | Golden Swan Team</h3>
-                <div class="job-date">Dec 2023 – Jun 2024</div>
-                <ul>
-                    <li>Built a scalable Laravel backend for a gold e-commerce website.</li>
-                    <li>Integrated advanced inventory and accounting systems.</li>
-                    <li>Customized dashboards for producers and marketers.</li>
-                    <li>Integrated multiple payment gateways including SnapPay installments.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Full Stack Developer | Hoshmand Afzar Michael</h3>
-                <div class="job-date">Jul 2022 – Nov 2022</div>
-                <ul>
-                    <li>Developed VoIP platform with PayPal payment integration.</li>
-                    <li>Built real-time dashboard and custom pricing engine.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Full Stack Developer | Academy Gigasar</h3>
-                <div class="job-date">Nov 2021 – Apr 2022</div>
-                <ul>
-                    <li>Developed personalized wellness tracking and consulting platform.</li>
-                    <li>Built interactive assessments and user engagement tools.</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3>Founder & Full Stack Developer | Advancelearn</h3>
-                <div class="job-date">Apr 2022 – Present</div>
-                <ul>
-                    <li>Founded and developed Advancelearn.ir educational platform.</li>
-                    <li>Added real-time ticketing, SMS integration, and repository pattern architecture.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="section">
-            <h2>Technical Skills</h2>
-            
-            <div class="skills-container">
-              <!-- Core Expertise (Expert) -->
-              <div class="badge expert">PHP</div>
-              <div class="badge expert">Laravel</div>
-              <div class="badge expert">MySQL</div>
-              <div class="badge expert">REST APIs</div>
-              <div class="badge expert">OOP</div>
-              
-              <!-- Advanced Skills -->
-              <div class="badge advanced">Redis</div>
-              <div class="badge advanced">Design Patterns</div>
-              <div class="badge advanced">SOLID</div>
-              <div class="badge advanced">Git</div>
-              <div class="badge advanced">TDD</div>
-              
-              <!-- Intermediate Skills -->
-              <div class="badge intermediate">MongoDB</div>
-              <div class="badge intermediate">ElasticSearch</div>
-              <div class="badge intermediate">Livewire</div>
-              <div class="badge intermediate">Docker</div>
-              
-              <!-- Basic Skills -->
-              <div class="badge beginner">Inertia.js</div>
-              <div class="badge beginner">Node.js</div>
-              <div class="badge beginner">Express.js</div>
-              <div class="badge beginner">Nest.js</div>
-            </div>
-            
-            <div class="skill-legend">
-              <div class="legend-item">
-                <span class="legend-color expert"></span>
-                <span>Expert</span>
-              </div>
-              <div class="legend-item">
-                <span class="legend-color advanced"></span>
-                <span>Advanced</span>
-              </div>
-              <div class="legend-item">
-                <span class="legend-color intermediate"></span>
-                <span>Intermediate</span>
-              </div>
-              <div class="legend-item">
-                <span class="legend-color beginner"></span>
-                <span>Beginner</span>
-              </div>
-            </div>
-          </div>
-
-        <div class="section">
-            <h2>Education</h2>
-            <p><strong>Associate Degree in Architecture</strong> – Alghadir Technical University of Zanjan, 2013</p>
-        </div>
-
-        <div class="section">
-            <h2>Theoretical Skills</h2>
+            <h2 class="english-content">Theoretical Skills</h2>
+            <h2 class="persian-content">مهارت‌های نظری</h2>
             <ul>
-                <li>Familiar with Cloud Native Concepts</li>
-                <li>Basic Docker Knowledge</li>
-                <li>Microservices Architecture & RabbitMQ in Laravel</li>
+                <li class="english-content">Familiar with Cloud Native Concepts</li>
+                <li class="persian-content">آشنایی با مفاهیم Cloud Native</li>
+                <li class="english-content">Basic Docker Knowledge</li>
+                <li class="persian-content">دانش پایه Docker</li>
+                <li class="english-content">Microservices Architecture & RabbitMQ in Laravel</li>
+                <li class="persian-content">معماری میکروسرویس‌ها و RabbitMQ در لاراول</li>
             </ul>
         </div>
 
         <div class="footer">
-            <p>Made with ❤️ by Saber Qadimi</p>
+            <p class="english-content">Made with ❤️ by Saber Qadimi</p>
+            <p class="persian-content">ساخته شده با ❤️ توسط صابر قدیمی</p>
         </div>
     </div>
+
+    <script>
+        // Check URL for language parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+
+        // Set initial language based on URL or default to English
+        const initialLanguage = langParam === 'fa' ? 'fa' : 'en';
+        switchLanguage(initialLanguage);
+
+        function switchLanguage(lang) {
+            // Update URL without reloading the page
+            const newUrl = new URL(window.location.href);
+            newUrl.searchParams.set('lang', lang);
+            window.history.pushState({}, '', newUrl);
+
+            // Update button states
+            document.querySelectorAll('.language-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+                if ((lang === 'en' && btn.textContent === 'English') ||
+                    (lang === 'fa' && btn.textContent === 'فارسی')) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Show/hide language content
+            if (lang === 'fa') {
+                document.body.dir = 'rtl';
+                document.querySelectorAll('.english-content').forEach(el => el.style.display = 'none');
+                document.querySelectorAll('.persian-content').forEach(el => el.style.display = 'block');
+            } else {
+                document.body.dir = 'ltr';
+                document.querySelectorAll('.english-content').forEach(el => el.style.display = 'block');
+                document.querySelectorAll('.persian-content').forEach(el => el.style.display = 'none');
+            }
+        }
+    </script>
 </body>
 
 </html>
