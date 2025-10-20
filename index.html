@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Saber Qadimi | Resume</title>
+    <title>Saber Qadimi | Backend Developer Resume</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Global styles */
         :root {
             --primary: #4361ee;
             --secondary: #3a0ca3;
@@ -158,13 +157,6 @@
             margin-top: 1rem;
         }
 
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 1rem;
-        }
-
         .badge {
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -179,30 +171,31 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Skill Level Colors */
         .badge.expert {
             background-color: #3a0ca3;
-            /* Dark Purple */
             border: 1px solid #2a0a7a;
         }
 
         .badge.advanced {
             background-color: #4361ee;
-            /* Royal Blue */
             border: 1px solid #3a56d4;
         }
 
         .badge.intermediate {
             background-color: #4cc9f0;
-            /* Sky Blue */
             border: 1px solid #3ab4d4;
             color: #333;
         }
 
         .badge.beginner {
             background-color: #f72585;
-            /* Pink */
             border: 1px solid #e5177b;
+        }
+
+        .badge.basic {
+            background-color: #adb5bd;
+            border: 1px solid #6c757d;
+            color: white;
         }
 
         .skill-legend {
@@ -244,26 +237,8 @@
             background-color: #f72585;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .skills-container {
-                gap: 0.6rem;
-            }
-
-            .badge {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
-            }
-
-            .skill-legend {
-                gap: 1rem;
-                font-size: 0.8rem;
-            }
-        }
-
-        .badge:hover {
-            background-color: var(--accent);
-            transform: translateY(-2px);
+        .legend-color.basic {
+            background-color: #adb5bd;
         }
 
         .footer {
@@ -275,7 +250,6 @@
             font-size: 0.9rem;
         }
 
-        /* Animations */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -296,7 +270,6 @@
             animation: fadeIn 1s ease-out;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .container {
                 padding: 2rem;
@@ -311,9 +284,22 @@
                 width: 100%;
                 margin-top: 1.5rem;
             }
+
+            .skills-container {
+                gap: 0.6rem;
+            }
+
+            .badge {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .skill-legend {
+                gap: 1rem;
+                font-size: 0.8rem;
+            }
         }
 
-        /* Language switcher */
         .language-switcher {
             position: fixed;
             top: 20px;
@@ -346,7 +332,6 @@
             background-color: var(--light-gray);
         }
 
-        /* RTL support for Persian */
         body[dir="rtl"] {
             direction: rtl;
             font-family: 'Inter', sans-serif;
@@ -363,6 +348,7 @@
         }
 
         .persian-content {
+            margin-right: 8px;
             display: none;
         }
     </style>
@@ -379,8 +365,8 @@
             <div class="title">
                 <h1 class="english-content">Saber Qadimi</h1>
                 <h1 class="persian-content">صابر قدیمی</h1>
-                <h3 class="english-content">Back-end Developer | Laravel Expert</h3>
-                <h3 class="persian-content">توسعه دهنده بک اند | متخصص لاراول</h3>
+                <h3 class="english-content">Backend Developer | Laravel Specialist</h3>
+                <h3 class="persian-content">توسعه دهنده بک‌اند | متخصص لاراول</h3>
             </div>
             <div class="contact">
                 <div class="contact-item">
@@ -405,60 +391,136 @@
                 </div>
             </div>
         </div>
+
         <div class="section">
-            <h2 class="english-content">About Me</h2>
-            <h2 class="persian-content">درباره من</h2>
+            <h2 class="english-content">Professional Summary</h2>
+            <h2 class="persian-content">خلاصه حرفه‌ای</h2>
 
             <p class="english-content">
-                Full-Stack PHP Developer with over 4 years of experience in designing and developing robust, scalable
-                web applications. While mastering core technologies like PHP, Laravel, and JavaScript, I’ve also focused
-                on deepening my understanding of essential software engineering concepts—such as deployment workflows,
-                server configuration, and containerization using Docker. I’ve actively explored design patterns and
-                architectural principles to build maintainable systems and have studied scalability strategies including
-                load balancing and horizontal scaling. My work is shaped by a continuous learning mindset, hands-on
-                experimentation, and a strong commitment to writing clean, extensible code. I thrive in collaborative,
-                agile environments and am always eager to tackle technical challenges that require both depth and
-                creativity.
+                Backend-focused developer with 4+ years of experience building scalable web applications using Laravel.
+                I specialize in creating robust APIs, optimizing database performance, and implementing clean,
+                maintainable code.
+                While I can handle frontend tasks with Blade when needed, my expertise lies in server-side development,
+                system architecture, and solving complex backend challenges. Recently expanding my skills with Nest.js
+                and deepening my understanding of deployment workflows, containerization, and system scalability.
             </p>
 
             <p class="persian-content">
-                توسعه‌دهنده فول‌استک PHP با بیش از ۴ سال تجربه در طراحی و توسعه اپلیکیشن‌های وب قدرتمند و مقیاس‌پذیر. در
-                کنار تسلط بر فناوری‌های اصلی مانند PHP، Laravel و JavaScript، تمرکز ویژه‌ای بر درک عمیق مفاهیم مهندسی
-                نرم‌افزار داشته‌ام؛ از جمله فرایندهای استقرار برنامه روی سرور، پیکربندی سرورها و استفاده از ابزارهایی
-                مانند Docker برای کانتینرسازی. همچنین مفاهیم معماری نرم‌افزار و الگوهای طراحی را به‌صورت عملی مطالعه و
-                در پروژه‌ها پیاده‌سازی کرده‌ام. در مسیر توسعه سامانه‌های مقیاس‌پذیر، با مفاهیمی مانند لودبالانسر (Load
-                Balancing) و مقیاس‌پذیری افقی آشنا شده‌ام و آن‌ها را در طراحی‌ها مدنظر قرار داده‌ام. رویکرد من مبتنی بر
-                یادگیری مداوم، آزمون و خطا، و تعهد به تولید کدی تمیز، قابل نگهداری و توسعه‌پذیر است. همکاری تیمی،
-                متدولوژی‌های چابک و مواجهه با چالش‌های فنی پیچیده از جمله بخش‌های مورد علاقه‌ من در مسیر توسعه هستند.
+                من برنامه‌نویس فول‌استک PHP هستم و حدود چهار ساله که به‌صورت جدی روی طراحی و توسعه‌ی اپلیکیشن‌های وب کار
+                می‌کنم.
+                مسیر یادگیریم رو از سال ۹۸ با دوره‌های مجتمع فنی شروع کردم و بعدش با تمرین، پروژه‌های شخصی و کار توی چند
+                تیم مختلف، تجربه‌هام شکل گرفت.
+                بیشتر تمرکزم روی بک‌اند با لاراول بوده، اما در کنار اون با جاوااسکریپت، بوت‌استرپ و ابزارهای فرانت هم
+                کار کردم و همیشه سعی کردم درک درستی از کل چرخه‌ی توسعه‌ی نرم‌افزار داشته باشم.
+                توی پروژه‌هایی که انجام دادم، از طراحی و پیاده‌سازی API و ساخت سیستم‌های ماژولار گرفته تا کار با Redis،
+                ElasticSearch و وب‌سوکت برای ارتباط بلادرنگ تجربه دارم.
+                از سمت سرور هم با لینوکس و Docker کار کردم، پروژه‌هام رو روی سرورهای اوبونتو دیپلوی کردم و با مفاهیم
+                استقرار و مقیاس‌پذیری آشنایی خوبی دارم.
+                در کل، اهل یادگیری مداومم و از کار تیمی و روبه‌رو شدن با چالش‌های فنی جدید لذت می‌برم.
             </p>
-        </div>
 
+        </div>
 
         <div class="section">
             <h2 class="english-content">Work Experience</h2>
             <h2 class="persian-content">سوابق شغلی</h2>
 
             <div class="job">
-                <h3 class="english-content">Full-Stack Developer | Cyclical Waves</h3>
-                <h3 class="persian-content">توسعه‌دهنده فول استک | Cyclical Waves</h3>
+                <h3 class="english-content">Founder & Full Stack Developer | ZibaReserve.ir</h3>
+                <h3 class="persian-content">بنیان‌گذار و توسعه‌دهنده فول‌استک | زیبارزرو</h3>
+                <div class="job-date">Jul 2025 – Present</div>
+                <ul>
+                    <li class="english-content">Launched and fully developed ZibaReserve.ir, a beauty services
+                        marketplace platform with Blade frontend</li>
+                    <li class="persian-content">راه‌اندازی و توسعه کامل پلتفرم مارکت‌پلیس خدمات زیبایی ZibaReserve.ir با
+                        فرانت‌اند Blade</li>
+
+                    <li class="english-content">Implemented comprehensive online booking system with time slot
+                        management</li>
+                    <li class="persian-content">پیاده‌سازی سیستم رزرو آنلاین جامع با مدیریت بازه‌های زمانی</li>
+
+                    <li class="english-content">Developed working hours management for beauty salons and clinics</li>
+                    <li class="persian-content">توسعه سیستم مدیریت ساعات کاری برای سالن‌ها و کلینیک‌های زیبایی</li>
+
+                    <li class="english-content">Created customer management system for tracking appointments and client
+                        history</li>
+                    <li class="persian-content">ساخت سیستم مدیریت مشتری برای پیگیری نوبت‌ها و سوابق مراجعین</li>
+
+                    <li class="english-content">Built salon/clinic profiles with service catalogs and pricing
+                        information</li>
+                    <li class="persian-content">طراحی پروفایل سالن‌ها و کلینیک‌ها با کاتالوگ خدمات و اطلاعات قیمت‌گذاری
+                    </li>
+
+                    <li class="english-content">Designed user management and role-based access control system</li>
+                    <li class="persian-content">طراحی سیستم مدیریت کاربران و کنترل دسترسی مبتنی بر نقش</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3 class="english-content">Telegram Bot Developer | Webinar Automation System For Agency.Campaign360
+                </h3>
+                <h3 class="persian-content">
+                    توسعه‌دهنده ربات تلگرام | سیستم اتوماسیون وبینار
+                    Agency.Campaign360
+                </h3>
+                <div class="job-date">Sep 2025 – Oct 2025 · 2 mos</div>
+                <ul>
+                    <li class="english-content">Designed and implemented a Telegram bot for managing webinar campaigns
+                        with audio content and lesson lists</li>
+                    <li class="persian-content">طراحی و پیاده‌سازی ربات تلگرام برای مدیریت کمپین‌های وبینار با محتوای
+                        صوتی و لیست دروس</li>
+                    <li class="english-content">Automated testing system activation after complete video viewing</li>
+                    <li class="persian-content">فعال‌سازی خودکار سیستم آزمون پس از مشاهده کامل ویدئو</li>
+                    <li class="english-content">User evaluation and automatic landing page access for qualified
+                        participants</li>
+                    <li class="persian-content">ارزیابی کاربران و دسترسی خودکار به لندینگ پیج برای شرکت‌کنندگان واجد
+                        شرایط</li>
+                    <li class="english-content">Integrated with voice call services and fast SMS delivery</li>
+                    <li class="persian-content">یکپارچه‌سازی با سرویس‌های تماس صوتی و ارسال سریع پیامک</li>
+                    <li class="english-content">Channel notifications for timely user engagement</li>
+                    <li class="persian-content">ارسال اعلان به کاربران کانال برای تعامل به‌موقع</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <h3 class="english-content">Backend Developer | Cyclical Waves</h3>
+                <h3 class="persian-content">توسعه‌دهنده بک‌اند | Cyclical Waves</h3>
                 <div class="job-date">Jan 2023 – Present</div>
                 <ul>
-                    <li class="english-content">Enhanced complex financial applications by restructuring technical
-                        infrastructure and developing modular components.</li>
-                    <li class="persian-content">بهبود برنامه‌های مالی پیچیده با بازسازی زیرساخت فنی و توسعه کامپوننت‌های
-                        ماژولار.</li>
-                    <li class="english-content">Optimized systems using Redis caching, improving performance by over
-                        30%.</li>
-                    <li class="persian-content">بهینه‌سازی سیستم‌ها با استفاده از کش Redis، بهبود عملکرد بیش از 30%.
+                    <li class="english-content">Developed and maintained core financial platforms including CycFX,
+                        Trading Coaching Platform, and TahlilApp analysis system</li>
+                    <li class="persian-content">توسعه و نگهداری پلتفرم‌های مالی اصلی شامل CycFX، پلتفرم آموزشی تریدینگ و
+                        سیستم تحلیل TahlilApp</li>
+
+                    <li class="english-content">Implemented centralized AuthServer for single sign-on across all company
+                        platforms, reducing login complexity and support tickets</li>
+                    <li class="persian-content">پیاده‌سازی AuthServer متمرکز برای ورود یکپارچه به تمام پلتفرم‌های شرکت،
+                        کاهش پیچیدگی ورود و تیکت‌های پشتیبانی</li>
+
+                    <li class="english-content">Architected modular package system for shared features, enabling
+                        reusable components across multiple projects</li>
+                    <li class="persian-content">معماری سیستم پکیج ماژولار برای فیچرهای مشترک، امکان استفاده مجدد از
+                        کامپوننت‌ها در پروژه‌های متعدد</li>
+
+                    <li class="english-content">Integrated WebSocket for real-time chat rooms and live trading
+                        notifications</li>
+                    <li class="persian-content">یکپارچه‌سازی WebSocket برای چت روم‌های بلادرنگ و اعلان‌های زنده تریدینگ
                     </li>
-                    <li class="english-content">Implemented centralized AuthServer, improving login efficiency and
-                        reducing support costs.</li>
-                    <li class="persian-content">پیاده‌سازی AuthServer متمرکز، بهبود کارایی ورود به سیستم و کاهش
-                        هزینه‌های پشتیبانی.</li>
-                    <li class="english-content">Packaged shared modules to boost reusability and speed up dev cycles.
+
+                    <li class="english-content">Connected with external APIs including BigBlueButton for webinar
+                        services and various trading data providers</li>
+                    <li class="persian-content">اتصال با APIهای خارجی شامل BigBlueButton برای سرویس‌های وبینار و
+                        ارائه‌دهندگان مختلف داده‌های تریدینگ</li>
+
+                    <li class="english-content">Built Telegram bots for automated trading signals and user notifications
                     </li>
-                    <li class="persian-content">پکیج نویسی ماژول‌های مشترک برای افزایش قابلیت استفاده مجدد و تسریع
-                        چرخه‌های توسعه.</li>
+                    <li class="persian-content">ساخت ربات‌های تلگرام برای سیگنال‌های تریدینگ خودکار و اعلان‌های کاربران
+                    </li>
+
+                    <li class="english-content">Optimized system performance using Redis caching, significantly reducing
+                        response times and improving user experience</li>
+                    <li class="persian-content">بهینه‌سازی عملکرد سیستم با استفاده از کش Redis، کاهش چشمگیر زمان
+                        پاسخگویی و بهبود تجربه کاربری</li>
                 </ul>
             </div>
 
@@ -467,20 +529,16 @@
                 <h3 class="persian-content">توسعه‌دهنده بک‌اند | تیم قوطلایی</h3>
                 <div class="job-date">Dec 2023 – Jun 2024</div>
                 <ul>
-                    <li class="english-content">Built a scalable Laravel backend for a gold e-commerce website.</li>
-                    <li class="persian-content">ساخت بک‌اند لاراول مقیاس‌پذیر برای یک وبسایت تجارت الکترونیک طلا.</li>
-                    <li class="english-content">Integrated advanced inventory and accounting systems.</li>
-                    <li class="persian-content">ادغام سیستم‌های پیشرفته انبارداری و حسابداری.</li>
-                    <li class="english-content">Customized dashboards for producers and marketers.</li>
-                    <li class="persian-content">سفارشی‌سازی داشبوردها برای تولیدکنندگان و بازاریابان.</li>
-                    <li class="english-content">Integrated multiple payment gateways including SnapPay installments -
-                        Fadax - ZarinPlus - ZarinPal.
-                    </li>
-                    <li class="persian-content">ادغام چندین درگاه پرداخت از جمله اقساط
-                        SnapPay
-                        و
-                        Fadax - ZarinPlus - ZarinPal
-                    </li>
+                    <li class="english-content">Built a scalable Laravel backend for a gold e-commerce website</li>
+                    <li class="persian-content">ساخت بک‌اند لاراول مقیاس‌پذیر برای یک وبسایت تجارت الکترونیک طلا</li>
+                    <li class="english-content">Integrated advanced inventory and accounting systems</li>
+                    <li class="persian-content">ادغام سیستم‌های پیشرفته انبارداری و حسابداری</li>
+                    <li class="english-content">Customized dashboards for producers and marketers</li>
+                    <li class="persian-content">سفارشی‌سازی داشبوردها برای تولیدکنندگان و بازاریابان</li>
+                    <li class="english-content">Integrated multiple payment gateways including SnapPay installments,
+                        Fadax, ZarinPlus, ZarinPal</li>
+                    <li class="persian-content">ادغام چندین درگاه پرداخت از جمله اقساط SnapPay و Fadax - ZarinPlus -
+                        ZarinPal</li>
                 </ul>
             </div>
 
@@ -489,121 +547,56 @@
                 <h3 class="persian-content">توسعه‌دهنده فول‌استک | هوشمند افزار مایکل</h3>
                 <div class="job-date">Jul 2022 – Nov 2022</div>
                 <ul>
-                    <li class="english-content">Developed a VoIP platform with PayPal payment integration.</li>
-                    <li class="persian-content">توسعه پلتفرم VoIP با قابلیت پرداخت از طریق PayPal.</li>
-                    <li class="english-content">Created a web interface for managing and selling VoIP numbers with
-                        dynamic pricing and real-time credit tracking based on VoIP database updates.</li>
-                    <li class="persian-content">طراحی و پیاده‌سازی رابط وب برای مدیریت و فروش شماره‌های VoIP با
-                        قیمت‌گذاری پویا و نمایش بلادرنگ اعتبار باقی‌مانده، بر اساس داده‌های دریافتی از پایگاه داده VoIP.
-                    </li>
+                    <li class="english-content">Developed a comprehensive VoIP platform with user dashboard for
+                        purchasing and managing virtual numbers</li>
+                    <li class="persian-content">توسعه پلتفرم جامع VoIP با داشبورد کاربری برای خرید و مدیریت شماره‌های
+                        مجازی</li>
+
+                    <li class="english-content">Implemented PayPal payment gateway integration for secure online
+                        transactions</li>
+                    <li class="persian-content">پیاده‌سازی درگاه پرداخت PayPal برای تراکنش‌های امن آنلاین</li>
+
+                    <li class="english-content">Built a dynamic pricing system and real-time credit display for VoIP
+                        numbers</li>
+                    <li class="persian-content">ساخت سیستم قیمت‌گذاری پویا و نمایش بلادرنگ اعتبار شماره‌های VoIP</li>
+
+                    <li class="english-content">Created RESTful API endpoints to sync call data and update remaining
+                        credits from VoIP system</li>
+                    <li class="persian-content">ایجاد اندپوینت‌های RESTful API برای همگام‌سازی داده‌های تماس و
+                        به‌روزرسانی اعتبار باقی‌مانده از سیستم VoIP</li>
+
+                    <li class="english-content">Developed wallet system for users to manage their balance and purchase
+                        credits</li>
+                    <li class="persian-content">توسعه سیستم کیف پول برای مدیریت موجودی و خرید اعتبار توسط کاربران</li>
+
+                    <li class="english-content">Designed admin panel for managing VoIP numbers, pricing, and user
+                        accounts</li>
+                    <li class="persian-content">طراحی پنل مدیریت برای مدیریت شماره‌های VoIP، قیمت‌گذاری و حساب‌های
+                        کاربری</li>
                 </ul>
             </div>
-
 
             <div class="job">
                 <h3 class="english-content">Full Stack Developer | Academy Gigasar</h3>
                 <h3 class="persian-content">توسعه‌دهنده فول‌استک | آکادمی لاغری گیگاسر</h3>
                 <div class="job-date">Nov 2021 – Apr 2022</div>
                 <ul>
-                    <li class="english-content">
-                        Developed a health-oriented e-commerce and service platform for personalized weight loss
-                        programs, combining wellness tracking, consulting, and course sales.
-                    </li>
-                    <li class="persian-content">
-                        توسعه پلتفرم فروشگاهی و خدماتی سلامت‌محور برای ارائه برنامه‌های شخصی‌سازی‌شده کاهش وزن، با
-                        امکانات پیگیری سلامتی، مشاوره تخصصی و فروش دوره‌های آموزشی.
-                    </li>
-                    <li class="english-content">
-                        Implemented dynamic dashboards to visualize initial weight, target goals, purchased plans, and
-                        real-time user progress.
-                    </li>
-                    <li class="persian-content">
-                        پیاده‌سازی داشبوردهای پویا برای نمایش وزن اولیه، اهداف کاربر، برنامه‌های خریداری‌شده و روند
-                        پیشرفت به‌صورت بلادرنگ.
-                    </li>
-                    <li class="english-content">
-                        Integrated interactive assessments including personality tests (e.g., MBTI) to personalize user
-                        experience and recommendations.
-                    </li>
-                    <li class="persian-content">
-                        افزودن ارزیابی‌های تعاملی مانند تست‌های شخصیتی (مانند MBTI) برای شخصی‌سازی تجربه کاربری و
-                        پیشنهادهای متناسب.
-                    </li>
+                    <li class="english-content">Developed a health-oriented e-commerce and service platform for
+                        personalized weight loss programs</li>
+                    <li class="persian-content">توسعه پلتفرم فروشگاهی و خدماتی سلامت‌محور برای ارائه برنامه‌های
+                        شخصی‌سازی‌شده کاهش وزن</li>
+                    <li class="english-content">Implemented dynamic dashboards to visualize user progress and goals</li>
+                    <li class="persian-content">پیاده‌سازی داشبوردهای پویا برای نمایش روند پیشرفت و اهداف کاربران</li>
+                    <li class="english-content">Integrated interactive assessments including personality tests for
+                        personalized user experience</li>
+                    <li class="persian-content">افزودن ارزیابی‌های تعاملی مانند تست‌های شخصیتی برای شخصی‌سازی تجربه
+                        کاربری</li>
                 </ul>
             </div>
 
 
-            <div class="job">
-                <h3 class="english-content">Founder & Full Stack Developer | ZibaReserve.ir</h3>
-                <h3 class="persian-content">بنیان‌گذار و توسعه‌دهنده فول‌استک | زیبارزرو</h3>
-                <div class="job-date">Jul 2025 – Present</div>
-                <ul>
-                    <li class="english-content">
-                        Launched and fully developed ZibaReserve.ir, a beauty services marketplace platform,
-                        with a strong focus on UX/UI to connect users directly with beauty salons and clinics.
-                    </li>
-                    <li class="persian-content">
-                        راه‌اندازی و توسعه کامل پلتفرم مارکت‌پلیس خدمات زیبایی ZibaReserve.ir با تمرکز بر تجربه کاربری
-                        (UX) و رابط کاربری (UI) جهت اتصال مستقیم کاربران به سالن‌ها و کلینیک‌های زیبایی.
-                    </li>
-                    <li class="english-content">
-                        Implemented all front-end functionalities using Blade and JavaScript and back-end logic with
-                        Laravel,
-                        including online booking, salon/clinic profiles, and user management systems.
-                    </li>
-                    <li class="persian-content">
-                        پیاده‌سازی تمامی بخش‌های فرانت‌اند با Blade و JavaScript و بک‌اند با Laravel، شامل سیستم رزرو
-                        آنلاین، پروفایل سالن‌ها و آرایشگاه‌ها، و مدیریت کاربران.
-                    </li>
-                    <li class="english-content">
-                        Designed and developed database architecture and APIs to ensure the platform's scalability and
-                        optimal performance.
-                    </li>
-                    <li class="persian-content">
-                        طراحی و توسعه معماری دیتابیس و APIها برای اطمینان از مقیاس‌پذیری و عملکرد بهینه پلتفرم.
-                    </li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 class="english-content">Founder & Full Stack Developer | Advancelearn.ir</h3>
-                <h3 class="persian-content">بنیان‌گذار و توسعه‌دهنده فول‌استک | ادونس لرن</h3>
-                <div class="job-date">Apr 2022 – Jun 2025</div>
-                <ul>
-                    <li class="english-content">
-                        Designed, developed, and launched Advancelearn.ir, a comprehensive educational platform
-                        focused on programming and software development content.
-                    </li>
-                    <li class="persian-content">
-                        طراحی، توسعه و راه‌اندازی Advancelearn.ir، یک پلتفرم آموزشی جامع در حوزه برنامه‌نویسی و توسعه
-                        نرم‌افزار.
-                    </li>
-                    <li class="english-content">
-                        Implemented key features including group chat, real-time ticketing system, article publishing,
-                        Q&A sections, and user rating functionality.
-                    </li>
-                    <li class="persian-content">
-                        پیاده‌سازی قابلیت‌هایی نظیر چت گروهی، سیستم تیکتینگ بلادرنگ، انتشار مقاله، بخش پرسش و پاسخ و
-                        امکان امتیازدهی کاربران.
-                    </li>
-                    <li class="english-content">
-                        Integrated SMS services and applied the Repository Pattern for scalable backend architecture.
-                    </li>
-                    <li class="persian-content">
-                        ادغام خدمات پیامکی و پیاده‌سازی معماری مقیاس‌پذیر با استفاده از الگوی مخزن (Repository Pattern).
-                    </li>
-                    <li class="english-content">
-                        Project temporarily paused to focus on deepening backend expertise; planning to resume with a
-                        more service-oriented and scalable vision.
-                    </li>
-                    <li class="persian-content">
-                        پروژه به‌صورت موقت متوقف شد تا تمرکز بیشتری بر یادگیری عمیق‌تر مباحث بک‌اند داشته باشم؛ قصد دارم
-                        در آینده با رویکردی خدمات‌محور و مقیاس‌پذیرتر آن را ادامه دهم.
-                    </li>
-                </ul>
-            </div>
-            ```
         </div>
+
         <div class="section">
             <h2 class="english-content">Technical Skills</h2>
             <h2 class="persian-content">مهارت‌های فنی</h2>
@@ -621,19 +614,18 @@
                 <div class="badge advanced">Design Patterns</div>
                 <div class="badge advanced">SOLID</div>
                 <div class="badge advanced">Git</div>
-                <div class="badge advanced">TDD</div>
 
                 <!-- Intermediate Skills -->
+                <div class="badge intermediate">Node.js</div>
+                <div class="badge intermediate">Nest.js</div>
                 <div class="badge intermediate">MongoDB</div>
                 <div class="badge intermediate">ElasticSearch</div>
-                <div class="badge intermediate">Livewire</div>
                 <div class="badge intermediate">Docker</div>
+                <div class="badge intermediate">Linux/Ubuntu</div>
+                <div class="badge intermediate">JavaScript</div>
+                <div class="badge intermediate">Livewire</div>
+                <div class="badge intermediate">Bootstrap</div>
 
-                <!-- Basic Skills -->
-                <div class="badge beginner">Inertia.js</div>
-                <div class="badge beginner">Node.js</div>
-                <div class="badge beginner">Express.js</div>
-                <div class="badge beginner">Nest.js</div>
             </div>
 
             <div class="skill-legend">
@@ -652,12 +644,23 @@
                     <span class="english-content">Intermediate</span>
                     <span class="persian-content">متوسط</span>
                 </div>
-                <div class="legend-item">
-                    <span class="legend-color beginner"></span>
-                    <span class="english-content">Beginner</span>
-                    <span class="persian-content">مبتدی</span>
-                </div>
+
             </div>
+        </div>
+
+        <div class="section">
+            <h2 class="english-content">DevOps & Deployment</h2>
+            <h2 class="persian-content">DevOps و استقرار</h2>
+            <ul>
+                <li class="english-content">Experience deploying and managing projects on Ubuntu servers</li>
+                <li class="persian-content">تجربه استقرار و مدیریت پروژه‌ها روی سرورهای اوبونتو</li>
+                <li class="english-content">Basic Docker knowledge for containerization</li>
+                <li class="persian-content">دانش پایه Docker برای کانتینرسازی</li>
+                <li class="english-content">Familiar with server configuration and deployment workflows</li>
+                <li class="persian-content">آشنایی با پیکربندی سرور و فرآیندهای استقرار</li>
+                <li class="english-content">Understanding of scalability concepts including load balancing</li>
+                <li class="persian-content">درک مفاهیم مقیاس‌پذیری از جمله لود بالانسر</li>
+            </ul>
         </div>
 
         <div class="section">
@@ -666,19 +669,6 @@
             <p class="english-content"><strong>Associate Degree in Architecture</strong> – Alghadir Technical University
                 of Zanjan, 2013</p>
             <p class="persian-content"><strong>کاردانی معماری</strong> – دانشگاه فنی الغدیر زنجان، 1392</p>
-        </div>
-
-        <div class="section">
-            <h2 class="english-content">Theoretical Skills</h2>
-            <h2 class="persian-content">مهارت‌های نظری</h2>
-            <ul>
-                <li class="english-content">Familiar with Cloud Native Concepts</li>
-                <li class="persian-content">آشنایی با مفاهیم Cloud Native</li>
-                <li class="english-content">Basic Docker Knowledge</li>
-                <li class="persian-content">دانش پایه Docker</li>
-                <li class="english-content">Microservices Architecture & RabbitMQ in Laravel</li>
-                <li class="persian-content">معماری میکروسرویس‌ها و RabbitMQ در لاراول</li>
-            </ul>
         </div>
 
         <div class="footer">
