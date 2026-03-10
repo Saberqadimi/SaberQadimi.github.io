@@ -2,723 +2,388 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Saber Qadimi | Backend Developer Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #4361ee;
-            --secondary: #3a0ca3;
-            --accent: #f72585;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --light-gray: #e9ecef;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Saber Qadimi | Backend Developer Resume</title>
 
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        h1,
-        h2,
-        h3 {
-            color: var(--secondary);
-            margin-top: 0;
-        }
+<style>
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
+body{
+font-family: 'Inter', sans-serif;
+margin:0;
+background:#f8f9fa;
+color:#212529;
+}
 
-        h2 {
-            font-size: 1.8rem;
-            border-bottom: 2px solid var(--light-gray);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
+.container{
+max-width:900px;
+margin:40px auto;
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
 
-        h3 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
+h1{margin-bottom:5px}
+h2{border-bottom:1px solid #eee;padding-bottom:5px}
 
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+}
 
-        a:hover {
-            color: var(--accent);
-        }
+.contact{font-size:14px}
 
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 3rem;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
+.section{margin-bottom:40px}
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
+.job{margin-bottom:30px}
 
-        .title {
-            flex: 2;
-        }
+.job-date{
+color:#6c757d;
+font-size:14px;
+margin-bottom:10px;
+}
 
-        .contact {
-            flex: 1;
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
+ul{padding-left:20px}
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-        }
+.language-switcher{
+position:fixed;
+top:20px;
+right:20px;
+background:white;
+padding:8px 14px;
+border-radius:20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
 
-        .contact-item:last-child {
-            margin-bottom: 0;
-        }
+.language-switcher button{
+border:none;
+background:none;
+cursor:pointer;
+padding:6px 10px;
+border-radius:12px;
+}
 
-        .contact-icon {
-            margin-right: 0.8rem;
-            color: var(--primary);
-            width: 20px;
-            text-align: center;
-        }
+.language-switcher button.active{
+background:#4361ee;
+color:white;
+}
 
-        .section {
-            margin-bottom: 2.5rem;
-        }
+body[dir="rtl"]{
+direction:rtl;
+font-family:"Vazir";
+}
 
-        ul {
-            padding-left: 1.5rem;
-        }
+@font-face{
+font-family:'Vazir';
+src:url('./Vazir-Medium.woff2');
+}
 
-        li {
-            margin-bottom: 0.8rem;
-            position: relative;
-        }
+.persian-content{
+display:none;
+font-family:'Vazir';
+}
 
-        li:before {
-            content: "•";
-            color: var(--accent);
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-            position: absolute;
-        }
+</style>
 
-        .job {
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px dashed var(--light-gray);
-        }
-
-        .job:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 0;
-        }
-
-        .job-date {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 0.8rem;
-            font-weight: 500;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 1rem;
-        }
-
-        .badge {
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: white;
-            transition: all 0.2s ease;
-        }
-
-        .badge:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .badge.expert {
-            background-color: #3a0ca3;
-            border: 1px solid #2a0a7a;
-        }
-
-        .badge.advanced {
-            background-color: #4361ee;
-            border: 1px solid #3a56d4;
-        }
-
-        .badge.intermediate {
-            background-color: #4cc9f0;
-            border: 1px solid #3ab4d4;
-            color: #333;
-        }
-
-        .badge.beginner {
-            background-color: #f72585;
-            border: 1px solid #e5177b;
-        }
-
-        .badge.basic {
-            background-color: #adb5bd;
-            border: 1px solid #6c757d;
-            color: white;
-        }
-
-        .skill-legend {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-            justify-content: center;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-            color: #6c757d;
-        }
-
-        .legend-color {
-            width: 16px;
-            height: 16px;
-            border-radius: 4px;
-            margin-right: 8px;
-            display: inline-block;
-        }
-
-        .legend-color.expert {
-            background-color: #3a0ca3;
-        }
-
-        .legend-color.advanced {
-            background-color: #4361ee;
-        }
-
-        .legend-color.intermediate {
-            background-color: #4cc9f0;
-        }
-
-        .legend-color.beginner {
-            background-color: #f72585;
-        }
-
-        .legend-color.basic {
-            background-color: #adb5bd;
-        }
-
-        .footer {
-            margin-top: 3rem;
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid var(--light-gray);
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .container {
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        .section {
-            animation: fadeIn 1s ease-out;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 2rem;
-                margin: 1rem;
-            }
-
-            .header {
-                flex-direction: column;
-            }
-
-            .contact {
-                width: 100%;
-                margin-top: 1.5rem;
-            }
-
-            .skills-container {
-                gap: 0.6rem;
-            }
-
-            .badge {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
-            }
-
-            .skill-legend {
-                gap: 1rem;
-                font-size: 0.8rem;
-            }
-        }
-
-        .language-switcher {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: white;
-            padding: 8px 12px;
-            border-radius: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            gap: 10px;
-        }
-
-        .language-switcher button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .language-switcher button.active {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .language-switcher button:hover {
-            background-color: var(--light-gray);
-        }
-
-        body[dir="rtl"] {
-            direction: rtl;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body[dir="rtl"] ul {
-            padding-right: 1.5rem;
-            padding-left: 0;
-        }
-
-        body[dir="rtl"] li:before {
-            margin-right: -1em;
-            margin-left: 0;
-        }
-
-        @font-face {
-            font-family: 'Vazir';
-            src: url('./Vazir-Medium.woff2') format('woff');
-            font-weight: 500;
-            font-style: normal;
-            font-display: swap;
-        }
-
-        .persian-content {
-            margin-right: 8px;
-            display: none;
-            font-family: 'Vazir';
-            direction: rtl;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="language-switcher">
-        <button class="active" onclick="switchLanguage('en')">English</button>
-        <button onclick="switchLanguage('fa')">فارسی</button>
-    </div>
 
-    <div class="container">
-        <div class="header">
-            <div class="title">
-                <h1 class="english-content">Saber Qadimi</h1>
-                <h1 class="persian-content">صابر قدیمی</h1>
-                <h3 class="english-content">Backend Developer | Laravel Specialist</h3>
-                <h3 class="persian-content">توسعه دهنده بک‌اند | متخصص لاراول</h3>
-            </div>
-            <div class="contact">
-                <div class="contact-item">
-                    <span class="contact-icon">📱</span>
-                    <span style="direction: ltr;">+98 903-232-2968</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">📧</span>
-                    <a href="mailto:qadimi74@gmail.com">qadimi74@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">🔗</span>
-                    <a href="https://www.linkedin.com/in/saber-qadimi" target="_blank"
-                        class="english-content">LinkedIn</a>
-                    <a href="https://www.linkedin.com/in/saber-qadimi" target="_blank"
-                        class="persian-content">لینکدین</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon">💻</span>
-                    <a href="https://github.com/SaberQadimi" target="_blank" class="english-content">GitHub</a>
-                    <a href="https://github.com/SaberQadimi" target="_blank" class="persian-content">گیتهاب</a>
-                </div>
-            </div>
-        </div>
+<div class="language-switcher">
+<button class="active" onclick="switchLanguage('en')">English</button>
+<button onclick="switchLanguage('fa')">فارسی</button>
+</div>
 
-        <div class="section">
-            <h2 class="english-content">Professional Summary</h2>
-            <h2 class="persian-content">خلاصه حرفه‌ای</h2>
+<div class="container">
 
-            <p class="english-content">
-                I’m a backend developer with around 5 years of professional experience in PHP and Laravel. I’ve worked
-                on 10+ real-world projects, including e-commerce platforms, real-time services, custom CRMs, and
-                Telegram bots. I’ve used Laravel Sail to dockerize some projects and have a solid understanding of
-                Docker, containers, and microservice concepts, although I haven’t yet implemented a full microservice
-                architecture in production. I also have experience building Laravel packages, modular APIs, central
-                authentication systems, and deploying apps on Linux servers. I’m always eager to explore new
-                technologies and refine my development process.
-            </p>
+<div class="header">
 
-            <p class="persian-content" style="line-height: 30px;">
-                توسعه‌دهنده‌ی بک‌اند با حدود ۵ سال تجربه‌ی حرفه‌ای در PHP و Laravel هستم. روی بیش از ۱۰ پروژه‌ی واقعی در
-                حوزه‌های مختلف مثل فروشگاه‌های آنلاین، سرویس‌های بلادرنگ، CRMهای اختصاصی و بات‌های تلگرامی کار کردم. در
-                چند پروژه از Laravel Sail برای داکرایز کردن استفاده کردم و با Docker، کانتینرها و مفاهیم میکروسرویس
-                آشنایی دارم؛ هرچند هنوز در پروژه‌های واقعی از معماری میکروسرویس به‌صورت پروداکشن استفاده نکرده‌ام.
-                تجربه‌ی طراحی و ساخت پکیج‌های لاراولی، APIهای ماژولار، سیستم احراز هویت مرکزی و دیپلوی روی سرورهای
-                لینوکسی رو دارم. همیشه دنبال یادگیری ابزارهای جدید و بهینه‌تر کردن روند توسعه هستم.
-            </p>
+<div>
 
-        </div>
+<h1 class="english-content">Saber Qadimi</h1>
+<h1 class="persian-content">صابر قدیمی</h1>
 
-        <div class="section">
-            <h2 class="english-content">Work Experience</h2>
-            <h2 class="persian-content">سوابق شغلی</h2>
+<h3 class="english-content">Backend Developer | Laravel Specialist</h3>
+<h3 class="persian-content">توسعه دهنده بک‌اند | متخصص لاراول</h3>
 
-            <div class="job">
-                <h3 class="english-content">Founder & Full Stack Developer | ZibaReserve.ir</h3>
-                <h3 class="persian-content">بنیان‌گذار و توسعه‌دهنده فول‌استک | زیبارزرو</h3>
-                <div class="job-date">Jul 2025 – Present</div>
-                <ul>
-                    <li class="english-content">Launched and fully developed ZibaReserve.ir, a beauty services
-                        marketplace platform with Blade frontend</li>
-                    <li class="persian-content">راه‌اندازی و توسعه کامل پلتفرم مارکت‌پلیس خدمات زیبایی ZibaReserve.ir با
-                        فرانت‌اند Blade</li>
+</div>
 
-                    <li class="english-content">Implemented comprehensive online booking system with time slot
-                        management</li>
-                    <li class="persian-content">پیاده‌سازی سیستم رزرو آنلاین جامع با مدیریت بازه‌های زمانی</li>
+<div class="contact">
 
-                    <li class="english-content">Developed working hours management for beauty salons and clinics</li>
-                    <li class="persian-content">توسعه سیستم مدیریت ساعات کاری برای سالن‌ها و کلینیک‌های زیبایی</li>
+<div>📱 +98 903-232-2968</div>
+<div>📧 qadimi74@gmail.com</div>
 
-                    <li class="english-content">Created customer management system for tracking appointments and client
-                        history</li>
-                    <li class="persian-content">ساخت سیستم مدیریت مشتری برای پیگیری نوبت‌ها و سوابق مراجعین</li>
+</div>
 
-                    <li class="english-content">Built salon/clinic profiles with service catalogs and pricing
-                        information</li>
-                    <li class="persian-content">طراحی پروفایل سالن‌ها و کلینیک‌ها با کاتالوگ خدمات و اطلاعات قیمت‌گذاری
-                    </li>
+</div>
 
-                    <li class="english-content">Designed user management and role-based access control system</li>
-                    <li class="persian-content">طراحی سیستم مدیریت کاربران و کنترل دسترسی مبتنی بر نقش</li>
-                </ul>
-            </div>
+<div class="section">
 
-            <div class="job">
-                <h3 class="english-content">Telegram Bot Developer | Webinar Automation System For Agency.Campaign360
-                </h3>
-                <h3 class="persian-content">
-                    توسعه‌دهنده ربات تلگرام | سیستم اتوماسیون وبینار
-                    Agency.Campaign360
-                </h3>
-                <div class="job-date">Sep 2025 – Oct 2025 · 2 mos</div>
-                <ul>
-                    <li class="english-content">Designed and implemented a Telegram bot for managing webinar campaigns
-                        with audio content and lesson lists</li>
-                    <li class="persian-content">طراحی و پیاده‌سازی ربات تلگرام برای مدیریت کمپین‌های وبینار با محتوای
-                        صوتی و لیست دروس</li>
-                    <li class="english-content">Automated testing system activation after complete video viewing</li>
-                    <li class="persian-content">فعال‌سازی خودکار سیستم آزمون پس از مشاهده کامل ویدئو</li>
-                    <li class="english-content">User evaluation and automatic landing page access for qualified
-                        participants</li>
-                    <li class="persian-content">ارزیابی کاربران و دسترسی خودکار به لندینگ پیج برای شرکت‌کنندگان واجد
-                        شرایط</li>
-                    <li class="english-content">Integrated with voice call services and fast SMS delivery</li>
-                    <li class="persian-content">یکپارچه‌سازی با سرویس‌های تماس صوتی و ارسال سریع پیامک</li>
-                    <li class="english-content">Channel notifications for timely user engagement</li>
-                    <li class="persian-content">ارسال اعلان به کاربران کانال برای تعامل به‌موقع</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 class="english-content">Backend Developer | Cyclical Waves</h3>
-                <h3 class="persian-content">توسعه‌دهنده بک‌اند | Cyclical Waves</h3>
-                <div class="job-date">Jan 2023 – Present</div>
-                <ul>
-                    <li class="english-content">Developed and maintained core financial platforms including CycFX,
-                        Trading Coaching Platform, and TahlilApp analysis system</li>
-                    <li class="persian-content">توسعه و نگهداری پلتفرم‌های مالی اصلی شامل CycFX، پلتفرم آموزشی تریدینگ و
-                        سیستم تحلیل TahlilApp</li>
-
-                    <li class="english-content">Implemented centralized AuthServer for single sign-on across all company
-                        platforms, reducing login complexity and support tickets</li>
-                    <li class="persian-content">پیاده‌سازی AuthServer متمرکز برای ورود یکپارچه به تمام پلتفرم‌های شرکت،
-                        کاهش پیچیدگی ورود و تیکت‌های پشتیبانی</li>
-
-                    <li class="english-content">Architected modular package system for shared features, enabling
-                        reusable components across multiple projects</li>
-                    <li class="persian-content">معماری سیستم پکیج ماژولار برای فیچرهای مشترک، امکان استفاده مجدد از
-                        کامپوننت‌ها در پروژه‌های متعدد</li>
-
-                    <li class="english-content">Integrated WebSocket for real-time chat rooms and live trading
-                        notifications</li>
-                    <li class="persian-content">یکپارچه‌سازی WebSocket برای چت روم‌های بلادرنگ و اعلان‌های زنده تریدینگ
-                    </li>
-
-                    <li class="english-content">Connected with external APIs including BigBlueButton for webinar
-                        services and various trading data providers</li>
-                    <li class="persian-content">اتصال با APIهای خارجی شامل BigBlueButton برای سرویس‌های وبینار و
-                        ارائه‌دهندگان مختلف داده‌های تریدینگ</li>
-
-                    <li class="english-content">Built Telegram bots for automated trading signals and user notifications
-                    </li>
-                    <li class="persian-content">ساخت ربات‌های تلگرام برای سیگنال‌های تریدینگ خودکار و اعلان‌های کاربران
-                    </li>
-
-                    <li class="english-content">Optimized system performance using Redis caching, significantly reducing
-                        response times and improving user experience</li>
-                    <li class="persian-content">بهینه‌سازی عملکرد سیستم با استفاده از کش Redis، کاهش چشمگیر زمان
-                        پاسخگویی و بهبود تجربه کاربری</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 class="english-content">Backend Developer | Golden Swan Team</h3>
-                <h3 class="persian-content">توسعه‌دهنده بک‌اند | تیم قوطلایی</h3>
-                <div class="job-date">Dec 2023 – Jun 2024</div>
-                <ul>
-                    <li class="english-content">Built a scalable Laravel backend for a gold e-commerce website</li>
-                    <li class="persian-content">ساخت بک‌اند لاراول مقیاس‌پذیر برای یک وبسایت تجارت الکترونیک طلا</li>
-                    <li class="english-content">Integrated advanced inventory and accounting systems</li>
-                    <li class="persian-content">ادغام سیستم‌های پیشرفته انبارداری و حسابداری</li>
-                    <li class="english-content">Customized dashboards for producers and marketers</li>
-                    <li class="persian-content">سفارشی‌سازی داشبوردها برای تولیدکنندگان و بازاریابان</li>
-                    <li class="english-content">Integrated multiple payment gateways including SnapPay installments,
-                        Fadax, ZarinPlus, ZarinPal</li>
-                    <li class="persian-content">ادغام چندین درگاه پرداخت از جمله اقساط SnapPay و Fadax - ZarinPlus -
-                        ZarinPal</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 class="english-content">Full Stack Developer | Hoshmand Afzar Michael</h3>
-                <h3 class="persian-content">توسعه‌دهنده فول‌استک | هوشمند افزار مایکل</h3>
-                <div class="job-date">Jul 2022 – Nov 2022</div>
-                <ul>
-                    <li class="english-content">Developed a comprehensive VoIP platform with user dashboard for
-                        purchasing and managing virtual numbers</li>
-                    <li class="persian-content">توسعه پلتفرم جامع VoIP با داشبورد کاربری برای خرید و مدیریت شماره‌های
-                        مجازی</li>
-
-                    <li class="english-content">Implemented PayPal payment gateway integration for secure online
-                        transactions</li>
-                    <li class="persian-content">پیاده‌سازی درگاه پرداخت PayPal برای تراکنش‌های امن آنلاین</li>
-
-                    <li class="english-content">Built a dynamic pricing system and real-time credit display for VoIP
-                        numbers</li>
-                    <li class="persian-content">ساخت سیستم قیمت‌گذاری پویا و نمایش بلادرنگ اعتبار شماره‌های VoIP</li>
-
-                    <li class="english-content">Created RESTful API endpoints to sync call data and update remaining
-                        credits from VoIP system</li>
-                    <li class="persian-content">ایجاد اندپوینت‌های RESTful API برای همگام‌سازی داده‌های تماس و
-                        به‌روزرسانی اعتبار باقی‌مانده از سیستم VoIP</li>
-
-                    <li class="english-content">Developed wallet system for users to manage their balance and purchase
-                        credits</li>
-                    <li class="persian-content">توسعه سیستم کیف پول برای مدیریت موجودی و خرید اعتبار توسط کاربران</li>
-
-                    <li class="english-content">Designed admin panel for managing VoIP numbers, pricing, and user
-                        accounts</li>
-                    <li class="persian-content">طراحی پنل مدیریت برای مدیریت شماره‌های VoIP، قیمت‌گذاری و حساب‌های
-                        کاربری</li>
-                </ul>
-            </div>
-
-            <div class="job">
-                <h3 class="english-content">Full Stack Developer | Academy Gigasar</h3>
-                <h3 class="persian-content">توسعه‌دهنده فول‌استک | آکادمی لاغری گیگاسر</h3>
-                <div class="job-date">Nov 2021 – Apr 2022</div>
-                <ul>
-                    <li class="english-content">Developed a health-oriented e-commerce and service platform for
-                        personalized weight loss programs</li>
-                    <li class="persian-content">توسعه پلتفرم فروشگاهی و خدماتی سلامت‌محور برای ارائه برنامه‌های
-                        شخصی‌سازی‌شده کاهش وزن</li>
-                    <li class="english-content">Implemented dynamic dashboards to visualize user progress and goals</li>
-                    <li class="persian-content">پیاده‌سازی داشبوردهای پویا برای نمایش روند پیشرفت و اهداف کاربران</li>
-                    <li class="english-content">Integrated interactive assessments including personality tests for
-                        personalized user experience</li>
-                    <li class="persian-content">افزودن ارزیابی‌های تعاملی مانند تست‌های شخصیتی برای شخصی‌سازی تجربه
-                        کاربری</li>
-                </ul>
-            </div>
+<h2 class="english-content">Work Experience</h2>
+<h2 class="persian-content">سوابق شغلی</h2>
 
 
-        </div>
+<div class="job">
 
-        <div class="section">
-            <h2 class="english-content">Technical Skills</h2>
-            <h2 class="persian-content">مهارت‌های فنی</h2>
+<h3 class="english-content">Founder | ZibaReserve</h3>
+<h3 class="persian-content">بنیانگذار | زیبارزرو</h3>
 
-            <div class="skills-container">
-                <!-- Core Expertise (Expert) -->
-                <div class="badge expert">PHP</div>
-                <div class="badge expert">Laravel</div>
-                <div class="badge expert">MySQL</div>
-                <div class="badge expert">REST APIs</div>
-                <div class="badge expert">OOP</div>
+<div class="job-date"
+data-start="2025-07"
+data-end="present"></div>
 
-                <!-- Advanced Skills -->
-                <div class="badge advanced">Redis</div>
-                <div class="badge advanced">Design Patterns</div>
-                <div class="badge advanced">SOLID</div>
-                <div class="badge advanced">Git</div>
+<ul>
 
-                <!-- Intermediate Skills -->
-                <div class="badge intermediate">Node.js</div>
-                <div class="badge intermediate">Nest.js</div>
-                <div class="badge intermediate">MongoDB</div>
-                <div class="badge intermediate">ElasticSearch</div>
-                <div class="badge intermediate">Docker</div>
-                <div class="badge intermediate">Linux/Ubuntu</div>
-                <div class="badge intermediate">JavaScript</div>
-                <div class="badge intermediate">Livewire</div>
-                <div class="badge intermediate">Bootstrap</div>
+<li class="english-content">Developed beauty marketplace platform</li>
+<li class="persian-content">توسعه پلتفرم مارکت پلیس خدمات زیبایی</li>
 
-            </div>
+</ul>
 
-            <div class="skill-legend">
-                <div class="legend-item">
-                    <span class="legend-color expert"></span>
-                    <span class="english-content">Expert</span>
-                    <span class="persian-content">متخصص</span>
-                </div>
-                <div class="legend-item">
-                    <span class="legend-color advanced"></span>
-                    <span class="english-content">Advanced</span>
-                    <span class="persian-content">پیشرفته</span>
-                </div>
-                <div class="legend-item">
-                    <span class="legend-color intermediate"></span>
-                    <span class="english-content">Intermediate</span>
-                    <span class="persian-content">متوسط</span>
-                </div>
+</div>
 
-            </div>
-        </div>
 
-        <div class="section">
-            <h2 class="english-content">DevOps & Deployment</h2>
-            <h2 class="persian-content">DevOps و استقرار</h2>
-            <ul>
-                <li class="english-content">Experience deploying and managing projects on Ubuntu servers</li>
-                <li class="persian-content">تجربه استقرار و مدیریت پروژه‌ها روی سرورهای اوبونتو</li>
-                <li class="english-content">Basic Docker knowledge for containerization</li>
-                <li class="persian-content">دانش پایه Docker برای کانتینرسازی</li>
-                <li class="english-content">Familiar with server configuration and deployment workflows</li>
-                <li class="persian-content">آشنایی با پیکربندی سرور و فرآیندهای استقرار</li>
-                <li class="english-content">Understanding of scalability concepts including load balancing</li>
-                <li class="persian-content">درک مفاهیم مقیاس‌پذیری از جمله لود بالانسر</li>
-            </ul>
-        </div>
+<div class="job">
 
-        <div class="section">
-            <h2 class="english-content">Education</h2>
-            <h2 class="persian-content">تحصیلات</h2>
-            <p class="english-content"><strong>Associate Degree in Architecture</strong> – Alghadir Technical University
-                of Zanjan, 2013</p>
-            <p class="persian-content"><strong>کاردانی معماری</strong> – دانشگاه فنی الغدیر زنجان، 1392</p>
-        </div>
+<h3 class="english-content">Telegram Bot Developer</h3>
+<h3 class="persian-content">توسعه دهنده ربات تلگرام</h3>
 
-        <div class="footer">
-            <p class="english-content">Made with ❤️ by Saber Qadimi</p>
-            <p class="persian-content">ساخته شده با ❤️ توسط صابر قدیمی</p>
-        </div>
-    </div>
+<div class="job-date"
+data-start="2025-09"
+data-end="2025-10"></div>
 
-    <script>
-        // Check URL for language parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const langParam = urlParams.get('lang');
+<ul>
 
-        // Set initial language based on URL or default to English
-        const initialLanguage = langParam === 'fa' ? 'fa' : 'en';
-        switchLanguage(initialLanguage);
+<li class="english-content">Built webinar automation bot</li>
+<li class="persian-content">ساخت ربات اتوماسیون وبینار</li>
 
-        function switchLanguage(lang) {
-            // Update URL without reloading the page
-            const newUrl = new URL(window.location.href);
-            newUrl.searchParams.set('lang', lang);
-            window.history.pushState({}, '', newUrl);
+</ul>
 
-            // Update button states
-            document.querySelectorAll('.language-switcher button').forEach(btn => {
-                btn.classList.remove('active');
-                if ((lang === 'en' && btn.textContent === 'English') ||
-                    (lang === 'fa' && btn.textContent === 'فارسی')) {
-                    btn.classList.add('active');
-                }
-            });
+</div>
 
-            // Show/hide language content
-            if (lang === 'fa') {
-                document.body.dir = 'rtl';
-                document.querySelectorAll('.english-content').forEach(el => el.style.display = 'none');
-                document.querySelectorAll('.persian-content').forEach(el => el.style.display = 'block');
-            } else {
-                document.body.dir = 'ltr';
-                document.querySelectorAll('.english-content').forEach(el => el.style.display = 'block');
-                document.querySelectorAll('.persian-content').forEach(el => el.style.display = 'none');
-            }
-        }
-    </script>
+
+<div class="job">
+
+<h3 class="english-content">Backend Developer | Cyclical Waves</h3>
+<h3 class="persian-content">توسعه دهنده بک‌اند | Cyclical Waves</h3>
+
+<div class="job-date"
+data-start="2023-01"
+data-end="present"></div>
+
+<ul>
+
+<li class="english-content">Developed trading platforms</li>
+<li class="persian-content">توسعه پلتفرم‌های مالی و تریدینگ</li>
+
+</ul>
+
+</div>
+
+
+<div class="job">
+
+<h3 class="english-content">Backend Developer | Golden Swan</h3>
+<h3 class="persian-content">توسعه دهنده بک‌اند | تیم قو طلایی</h3>
+
+<div class="job-date"
+data-start="2023-12"
+data-end="2024-06"></div>
+
+<ul>
+
+<li class="english-content">Built gold ecommerce backend</li>
+<li class="persian-content">ساخت بک‌اند فروشگاه طلا</li>
+
+</ul>
+
+</div>
+
+
+<div class="job">
+
+<h3 class="english-content">Full Stack Developer</h3>
+<h3 class="persian-content">توسعه دهنده فول استک</h3>
+
+<div class="job-date"
+data-start="2022-07"
+data-end="2022-11"></div>
+
+<ul>
+
+<li class="english-content">Developed VoIP platform</li>
+<li class="persian-content">توسعه پلتفرم VoIP</li>
+
+</ul>
+
+</div>
+
+
+<div class="job">
+
+<h3 class="english-content">Full Stack Developer | Gigasar</h3>
+<h3 class="persian-content">توسعه دهنده فول استک | گیگاسر</h3>
+
+<div class="job-date"
+data-start="2021-11"
+data-end="2022-04"></div>
+
+<ul>
+
+<li class="english-content">Developed health ecommerce platform</li>
+<li class="persian-content">توسعه پلتفرم سلامت</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const monthsFa=[
+"فروردین","اردیبهشت","خرداد",
+"تیر","مرداد","شهریور",
+"مهر","آبان","آذر",
+"دی","بهمن","اسفند"
+];
+
+const monthsEn=[
+"Jan","Feb","Mar","Apr","May","Jun",
+"Jul","Aug","Sep","Oct","Nov","Dec"
+];
+
+function gregorianToJalali(gy,gm){
+
+const g_d_m=[0,31,59,90,120,151,181,212,243,273,304,334];
+
+let jy=(gy<=1600)?0:979;
+
+gy-=(gy<=1600)?621:1600;
+
+let gy2=(gm>2)?(gy+1):gy;
+
+let days=(365*gy)
++Math.floor((gy2+3)/4)
+-Math.floor((gy2+99)/100)
++Math.floor((gy2+399)/400)
+-80
++gm
++g_d_m[gm-1];
+
+jy+=33*Math.floor(days/12053);
+
+days%=12053;
+
+jy+=4*Math.floor(days/1461);
+
+days%=1461;
+
+if(days>365){
+jy+=Math.floor((days-1)/365);
+days=(days-1)%365;
+}
+
+const jm=(days<186)?
+1+Math.floor(days/31):
+7+Math.floor((days-186)/30);
+
+return{jy,jm};
+
+}
+
+function renderDates(lang){
+
+document.querySelectorAll(".job-date").forEach(el=>{
+
+const start=el.dataset.start;
+const end=el.dataset.end;
+
+const[sy,sm]=start.split("-").map(Number);
+
+if(lang==="fa"){
+
+const s=gregorianToJalali(sy,sm);
+
+let startFa=monthsFa[s.jm-1]+" "+s.jy;
+
+let endFa="اکنون";
+
+if(end!=="present"){
+
+const[ey,em]=end.split("-").map(Number);
+
+const e=gregorianToJalali(ey,em);
+
+endFa=monthsFa[e.jm-1]+" "+e.jy;
+
+}
+
+el.innerText=startFa+" – "+endFa;
+
+}else{
+
+let startEn=monthsEn[sm-1]+" "+sy;
+
+let endEn="Present";
+
+if(end!=="present"){
+
+const[ey,em]=end.split("-").map(Number);
+
+endEn=monthsEn[em-1]+" "+ey;
+
+}
+
+el.innerText=startEn+" – "+endEn;
+
+}
+
+});
+
+}
+
+function switchLanguage(lang){
+
+document.querySelectorAll(".language-switcher button").forEach(btn=>{
+btn.classList.remove("active");
+if((lang==="en"&&btn.textContent==="English")||
+(lang==="fa"&&btn.textContent==="فارسی")){
+btn.classList.add("active");
+}
+});
+
+if(lang==="fa"){
+
+document.body.dir="rtl";
+
+document.querySelectorAll(".english-content").forEach(e=>e.style.display="none");
+
+document.querySelectorAll(".persian-content").forEach(e=>e.style.display="block");
+
+}else{
+
+document.body.dir="ltr";
+
+document.querySelectorAll(".english-content").forEach(e=>e.style.display="block");
+
+document.querySelectorAll(".persian-content").forEach(e=>e.style.display="none");
+
+}
+
+renderDates(lang);
+
+}
+
+switchLanguage("en");
+
+</script>
+
 </body>
-
 </html>
